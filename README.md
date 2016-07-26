@@ -1,2 +1,2 @@
-# xiaomo-admin
-小莫的后台管理系统
+# xiaomo-info
+小莫的个人网站
