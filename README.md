@@ -1,2 +1,2 @@
-# xiaomo-info
-小莫的个人网站
+# xiaomo-info-admin
+小莫的个人网站后台
