@@ -36,28 +36,6 @@ export const PAGES_MENU = [
           }
         ]
       },
-      //{
-      //  path: 'components',
-      //  data: {
-      //    menu: {
-      //      title: 'Components',
-      //      icon: 'ion-gear-a',
-      //      selected: false,
-      //      expanded: false,
-      //      order: 250,
-      //    }
-      //  },
-      //  children: [
-      //    {
-      //      path: 'treeview',
-      //      data: {
-      //        menu: {
-      //          title: 'Tree View',
-      //        }
-      //      }
-      //    }
-      //  ]
-      //},
       {
         path: 'charts',
         data: {
@@ -250,81 +228,8 @@ export const PAGES_MENU = [
             expanded: false,
             order: 650,
           }
-        },
-        children: [
-          {
-            path: ['/login'],
-            data: {
-              menu: {
-                title: 'Login'
-              }
-            }
-          },
-          {
-            path: ['/register'],
-            data: {
-              menu: {
-                title: 'Register'
-              }
-            }
-          }
-        ]
-      },
-      {
-        path: '',
-        data: {
-          menu: {
-            title: 'Menu Level 1',
-            icon: 'ion-ios-more',
-            selected: false,
-            expanded: false,
-            order: 700,
-          }
-        },
-        children: [
-          {
-            path: '',
-            data: {
-              menu: {
-                title: 'Menu Level 1.1',
-                url: '#'
-              }
-            }
-          },
-          {
-            path: '',
-            data: {
-              menu: {
-                title: 'Menu Level 1.2',
-                url: '#'
-              }
-            },
-            children: [
-              {
-                path: '',
-                data: {
-                  menu: {
-                    title: 'Menu Level 1.2.1',
-                    url: '#'
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        path: '',
-        data: {
-          menu: {
-            title: 'External Link',
-            url: 'http://akveo.com',
-            icon: 'ion-android-exit',
-            order: 800,
-            target: '_blank'
-          }
         }
-      }
+      },
     ]
   }
 ];

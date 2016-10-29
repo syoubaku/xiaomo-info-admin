@@ -1,10 +1,10 @@
-import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgaModule } from '../../theme/nga.module';
+import {NgModule}      from '@angular/core';
+import {CommonModule}  from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgaModule} from '../../theme/nga.module';
 
-import { Login } from './login.component';
-import { routing }       from './login.routing';
+import {Login} from './login.component';
+import {routing}       from './login.routing';
 
 
 @NgModule({
@@ -19,4 +19,5 @@ import { routing }       from './login.routing';
     Login
   ]
 })
-export default class LoginModule {}
+export default class LoginModule {
+}

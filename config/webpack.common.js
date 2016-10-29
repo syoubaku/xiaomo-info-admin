@@ -76,7 +76,9 @@ module.exports = function (options) {
 
       // An array of directory names to be resolved to the current directory
       modules: [helpers.root('src'), 'node_modules'],
-
+      alias: {
+        'api': helpers.root('./src/api.config.ts')
+      }
     },
 
     /*
