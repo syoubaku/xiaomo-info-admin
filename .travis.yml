@@ -4,6 +4,8 @@ language: node_js
 
 node_js:
   - "4"
+  - "5"
+  - "6"
 
 addons:
   apt:
@@ -15,11 +17,12 @@ addons:
 install:
   - npm config set spin false
   - npm install -g npm@3
-  - npm install -g webpack
-  - npm install -g typescript
-  - npm install -g bower
+  - npm install -g typescript@2.0.0
 
   - npm install
 
 script:
   - npm run build:prod
+
+notifications:
+  slack: akveo:q559HckfZMSyZRb803aiLcjH
