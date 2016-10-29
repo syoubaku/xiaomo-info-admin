@@ -1,5 +1,6 @@
-import { Routes, RouterModule }  from '@angular/router';
-import { Pages } from './pages.component';
+import {Routes, RouterModule} from "@angular/router";
+import {Pages} from "./pages.component";
+import {AuthGuard} from "./directives/redirect.directive";
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
   {
@@ -9,15 +10,16 @@ const routes: Routes = [
   {
     path: 'pages',
     component: Pages,
+    canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', loadChildren: () => System.import('./dashboard/dashboard.module') },
-      { path: 'editors', loadChildren: () => System.import('./editors/editors.module') },
-      { path: 'charts', loadChildren: () => System.import('./charts/charts.module') },
-      { path: 'ui', loadChildren: () => System.import('./ui/ui.module') },
-      { path: 'forms', loadChildren: () => System.import('./forms/forms.module') },
-      { path: 'tables', loadChildren: () => System.import('./tables/tables.module') },
-      { path: 'maps', loadChildren: () => System.import('./maps/maps.module') }
+      {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+      {path: 'dashboard', loadChildren: () => System.import('./dashboard/dashboard.module')},
+      {path: 'editors', loadChildren: () => System.import('./editors/editors.module')},
+      {path: 'charts', loadChildren: () => System.import('./charts/charts.module')},
+      {path: 'ui', loadChildren: () => System.import('./ui/ui.module')},
+      {path: 'forms', loadChildren: () => System.import('./forms/forms.module')},
+      {path: 'tables', loadChildren: () => System.import('./tables/tables.module')},
+      {path: 'maps', loadChildren: () => System.import('./maps/maps.module')}
     ]
   }
 ];

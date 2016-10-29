@@ -1,5 +1,6 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
+import {Component, ViewEncapsulation} from "@angular/core";
+import {FormGroup, AbstractControl, FormBuilder, Validators} from "@angular/forms";
+import {UserService} from "../services/user.service";
 
 @Component({
   selector: 'login',
@@ -9,26 +10,33 @@ import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/form
 })
 export class Login {
 
-  public form:FormGroup;
-  public email:AbstractControl;
-  public password:AbstractControl;
-  public submitted:boolean = false;
+  public form: FormGroup;
+  public userName: AbstractControl;
+  public password: AbstractControl;
+  public submitted: boolean = false;
+  public user: any;
 
-  constructor(fb:FormBuilder) {
+  constructor(fb: FormBuilder, public userService: UserService) {
     this.form = fb.group({
-      'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
+      'userName': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
     });
 
-    this.email = this.form.controls['email'];
+    this.userName = this.form.controls['userName'];
     this.password = this.form.controls['password'];
   }
 
-  public onSubmit(values:Object):void {
+  public onSubmit(values:Object): void {
     this.submitted = true;
     if (this.form.valid) {
-      // your code goes here
-      // console.log(values);
+      this.userService.login(values["userName"], values["password"]).subscribe(res=> {
+        this.user = res;
+      });
+      console.log(this.user);
+      if (!this.user) {
+        return;
+      }
+      localStorage.setItem("currentUser", values.get("userName"));
     }
   }
 }
