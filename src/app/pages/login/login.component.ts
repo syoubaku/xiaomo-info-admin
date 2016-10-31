@@ -36,7 +36,7 @@ export class Login {
       if (!this.user) {
         return;
       }
-      localStorage.setItem("currentUser", values.get("userName"));
+      localStorage.setItem("currentUser", values["userName"]);
     }
   }
 }
