@@ -3,7 +3,7 @@ import {Http} from "@angular/http";
 import {getLinkApi} from "./../../../../../api.config";
 import {Observable} from "rxjs";
 @Injectable()
-export class SmartTablesService {
+export class LinkTablesService {
 
   metricsTableData = [
     {

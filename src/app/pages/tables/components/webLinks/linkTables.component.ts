@@ -1,15 +1,14 @@
 import {Component, ViewEncapsulation} from "@angular/core";
-import {SmartTablesService} from "./smartTables.service";
+import {LinkTablesService} from "./linkTables.service";
 import {LocalDataSource} from "ng2-smart-table";
-import {DateTranslatePipe} from "../../../pipes/dateTranslate.pipe";
 
 @Component({
   selector: 'basic-tables',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('./smartTables.scss')],
-  template: require('./smartTables.html')
+  styles: [require('./linkTables.scss')],
+  template: require('./linkTables.html')
 })
-export class SmartTables {
+export class LinkTables {
 
   query: string = '';
 
@@ -62,14 +61,12 @@ export class SmartTables {
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(protected service: SmartTablesService) {
+  constructor(protected service: LinkTablesService) {
     this.service.getData().subscribe(res=> {
       console.log(res.data.content);
       this.source.load(res.data.content);
     })
   }
-
-
 
 
   onDeleteConfirm(event): void {
