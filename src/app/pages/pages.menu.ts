@@ -6,7 +6,7 @@ export const PAGES_MENU = [
         path: 'dashboard',
         data: {
           menu: {
-            title: 'Dashboard',
+            title: '主面板',
             icon: 'ion-android-home',
             selected: false,
             expanded: false,
@@ -48,7 +48,7 @@ export const PAGES_MENU = [
         path: 'editors',
         data: {
           menu: {
-            title: 'Editors',
+            title: '编辑器',
             icon: 'ion-edit',
             selected: false,
             expanded: false,
@@ -60,7 +60,7 @@ export const PAGES_MENU = [
             path: 'ckeditor',
             data: {
               menu: {
-                title: 'CKEditor',
+                title: '富文本编辑器',
               }
             }
           }
@@ -70,7 +70,7 @@ export const PAGES_MENU = [
         path: 'charts',
         data: {
           menu: {
-            title: 'Charts',
+            title: '图表展示',
             icon: 'ion-stats-bars',
             selected: false,
             expanded: false,
@@ -82,7 +82,7 @@ export const PAGES_MENU = [
             path: 'chartist-js',
             data: {
               menu: {
-                title: 'Chartist.Js',
+                title: '图表',
               }
             }
           }
@@ -92,7 +92,7 @@ export const PAGES_MENU = [
         path: 'ui',
         data: {
           menu: {
-            title: 'UI Features',
+            title: 'UI特性',
             icon: 'ion-android-laptop',
             selected: false,
             expanded: false,
@@ -104,7 +104,7 @@ export const PAGES_MENU = [
             path: 'typography',
             data: {
               menu: {
-                title: 'Typography',
+                title: '布局',
               }
             }
           },
@@ -112,7 +112,7 @@ export const PAGES_MENU = [
             path: 'buttons',
             data: {
               menu: {
-                title: 'Buttons',
+                title: '按钮',
               }
             }
           },
@@ -120,7 +120,7 @@ export const PAGES_MENU = [
             path: 'icons',
             data: {
               menu: {
-                title: 'Icons',
+                title: '图标',
               }
             }
           },
@@ -128,7 +128,7 @@ export const PAGES_MENU = [
             path: 'modals',
             data: {
               menu: {
-                title: 'Modals',
+                title: '弹窗',
               }
             }
           },
@@ -146,7 +146,7 @@ export const PAGES_MENU = [
         path: 'forms',
         data: {
           menu: {
-            title: 'Form Elements',
+            title: '表单元素',
             icon: 'ion-compose',
             selected: false,
             expanded: false,
@@ -158,7 +158,7 @@ export const PAGES_MENU = [
             path: 'inputs',
             data: {
               menu: {
-                title: 'Form Inputs',
+                title: '表单输入',
               }
             }
           },
@@ -166,7 +166,7 @@ export const PAGES_MENU = [
             path: 'layouts',
             data: {
               menu: {
-                title: 'Form Layouts',
+                title: '表单布局',
               }
             }
           }
@@ -176,7 +176,7 @@ export const PAGES_MENU = [
         path: 'maps',
         data: {
           menu: {
-            title: 'Maps',
+            title: '地图',
             icon: 'ion-ios-location-outline',
             selected: false,
             expanded: false,
@@ -188,48 +188,12 @@ export const PAGES_MENU = [
             path: 'googlemaps',
             data: {
               menu: {
-                title: 'Google Maps',
-              }
-            }
-          },
-          {
-            path: 'leafletmaps',
-            data: {
-              menu: {
-                title: 'Leaflet Maps',
-              }
-            }
-          },
-          {
-            path: 'bubblemaps',
-            data: {
-              menu: {
-                title: 'Bubble Maps',
-              }
-            }
-          },
-          {
-            path: 'linemaps',
-            data: {
-              menu: {
-                title: 'Line Maps',
+                title: '谷歌地图',
               }
             }
           }
         ]
-      },
-      {
-        path: '',
-        data: {
-          menu: {
-            title: 'Pages',
-            icon: 'ion-document',
-            selected: false,
-            expanded: false,
-            order: 650,
-          }
-        }
-      },
+      }
     ]
   }
 ];
