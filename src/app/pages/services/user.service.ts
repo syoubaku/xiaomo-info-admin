@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Http, Headers, RequestOptions} from "@angular/http";
-import { getUserApi } from "../../../api.config";
+import {getUserApi} from "../../../api.config";
 
 @Injectable()
 export class UserService {
@@ -9,11 +9,13 @@ export class UserService {
   }
 
   login(userName, password) {
-    // let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'});
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let body = JSON.stringify({userName: userName, password:password});
-    let options = new RequestOptions({ headers: headers });
-    return this.http.post(getUserApi, {userName: userName, password:password})
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let body = JSON.stringify({userName: userName, password: password});
+    let options = new RequestOptions({
+      headers: headers
+    });
+    return this.http.post(getUserApi, body, options)
       .map(res => res.json());
   }
+
 }

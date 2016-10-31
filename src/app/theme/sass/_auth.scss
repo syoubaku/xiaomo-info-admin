@@ -2,7 +2,6 @@
 
 $text-color: #ffffff;
 
-
 .auth-main {
   display: flex;
   align-items: center;
@@ -123,5 +122,11 @@ a.forgot-pass {
 }
 
 .btn-auth {
-  color: #ffffff!important;
+  color: #ffffff !important;
+}
+
+.login-error {
+  text-align: center;
+  margin: 0 auto;
+  color: red;
 }
