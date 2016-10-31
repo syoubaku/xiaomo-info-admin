@@ -6,3 +6,4 @@ export const base="http://localhost:8080/";
  * @type {string}
  */
 export const getUserApi = base+"adminUser/login";
+export const getLinkApi = base+"link/findAll";

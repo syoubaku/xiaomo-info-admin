@@ -15,6 +15,36 @@ export const PAGES_MENU = [
         }
       },
       {
+        path: 'tables',
+        data: {
+          menu: {
+            title: '小莫的主页',
+            icon: 'ion-grid',
+            selected: false,
+            expanded: false,
+            order: 500,
+          }
+        },
+        children: [
+          {
+            path: 'webLinks',
+            data: {
+              menu: {
+                title: '友情链接管理',
+              }
+            }
+          },
+          {
+            path: 'adminUsers',
+            data: {
+              menu: {
+                title: '后台用户管理',
+              }
+            }
+          }
+        ]
+      },
+      {
         path: 'editors',
         data: {
           menu: {
@@ -137,36 +167,6 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'Form Layouts',
-              }
-            }
-          }
-        ]
-      },
-      {
-        path: 'tables',
-        data: {
-          menu: {
-            title: 'Tables',
-            icon: 'ion-grid',
-            selected: false,
-            expanded: false,
-            order: 500,
-          }
-        },
-        children: [
-          {
-            path: 'basictables',
-            data: {
-              menu: {
-                title: 'Basic Tables',
-              }
-            }
-          },
-          {
-            path: 'smarttables',
-            data: {
-              menu: {
-                title: 'Smart Tables',
               }
             }
           }

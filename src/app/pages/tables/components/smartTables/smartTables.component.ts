@@ -1,7 +1,7 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-
-import { SmartTablesService } from './smartTables.service';
-import { LocalDataSource } from 'ng2-smart-table';
+import {Component, ViewEncapsulation} from "@angular/core";
+import {SmartTablesService} from "./smartTables.service";
+import {LocalDataSource} from "ng2-smart-table";
+import {DateTranslatePipe} from "../../../pipes/dateTranslate.pipe";
 
 @Component({
   selector: 'basic-tables',
@@ -30,42 +30,50 @@ export class SmartTables {
     },
     columns: {
       id: {
-        title: 'ID',
+        title: 'id',
         type: 'number'
       },
-      firstName: {
-        title: 'First Name',
+      name: {
+        title: '名字',
         type: 'string'
       },
-      lastName: {
-        title: 'Last Name',
+      url: {
+        title: 'url',
         type: 'string'
       },
-      username: {
-        title: 'Username',
-        type: 'string'
-      },
-      email: {
-        title: 'E-mail',
-        type: 'string'
-      },
-      age: {
-        title: 'Age',
+      order: {
+        title: '顺序',
         type: 'number'
-      }
+      },
+      version: {
+        title: '版本',
+        type: 'number'
+      },
+      // createTime: {
+      //   title: '创建时间',
+      //   type: 'date'
+      // },
+      // updateTime: {
+      //   title: '更新时间',
+      //   type: 'date'
+      // }
     }
   };
 
   source: LocalDataSource = new LocalDataSource();
 
   constructor(protected service: SmartTablesService) {
-    this.service.getData().then((data) => {
-      this.source.load(data);
-    });
+    this.service.getData().subscribe(res=> {
+      console.log(res.data.content);
+      this.source.load(res.data.content);
+    })
   }
 
+
+
+
   onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
+    if (window.confirm('确定要删除吗?')) {
       event.confirm.resolve();
     } else {
       event.confirm.reject();

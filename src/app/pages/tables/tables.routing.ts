@@ -10,8 +10,8 @@ const routes: Routes = [
     path: '',
     component: Tables,
     children: [
-      { path: 'basictables', component: BasicTables },
-      { path: 'smarttables', component: SmartTables }
+      { path: 'adminUsers', component: BasicTables },
+      { path: 'webLinks', component: SmartTables }
     ]
   }
 ];
