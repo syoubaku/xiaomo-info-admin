@@ -33,4 +33,7 @@
 无效的原因是：对应的目录或者文件已经被git跟踪，此时再加入.gitignore后就无效了
 解决办法： 执行 git rm -r --cached .idea 删掉git己经管理的idea文件
 
-# 七、 截图
+# 七、 后台截图
+
+## 1. 登录
+![login](https://cloud.githubusercontent.com/assets/12625278/19924217/f6bc58d6-a125-11e6-9da2-4cb30195ce90.png)
