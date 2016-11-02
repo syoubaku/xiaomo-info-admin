@@ -1,11 +1,10 @@
+export class LinkModel {
 
-export class LinkModel{
+  private name: string;
 
-  private name:string;
+  private order: number;
 
-  private order:number;
-
-  private url:string;
+  private url: string;
 
 
   constructor(name: string, order: number, url: string) {
