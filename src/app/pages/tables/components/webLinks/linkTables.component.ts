@@ -48,14 +48,14 @@ export class LinkTables {
         title: '版本',
         type: 'number'
       },
-      // createTime: {
-      //   title: '创建时间',
-      //   type: 'date'
-      // },
-      // updateTime: {
-      //   title: '更新时间',
-      //   type: 'date'
-      // }
+      createTime: {
+        title: '创建时间',
+        type: 'date'
+      },
+      updateTime: {
+        title: '更新时间',
+        type: 'date'
+      }
     }
   };
 

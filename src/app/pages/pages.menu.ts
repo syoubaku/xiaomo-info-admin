@@ -27,6 +27,22 @@ export const PAGES_MENU = [
         },
         children: [
           {
+            path: 'adminUsers',
+            data: {
+              menu: {
+                title: '权限管理',
+              }
+            }
+          },
+          {
+            path: 'users',
+            data: {
+              menu: {
+                title: '用户管理',
+              }
+            }
+          },
+          {
             path: 'webLinks',
             data: {
               menu: {
@@ -34,14 +50,6 @@ export const PAGES_MENU = [
               }
             }
           },
-          {
-            path: 'adminUsers',
-            data: {
-              menu: {
-                title: '后台用户管理',
-              }
-            }
-          }
         ]
       },
       {
