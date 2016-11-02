@@ -76,7 +76,7 @@ export class LinkTables {
   onDeleteConfirm(event): void {
     if (window.confirm('确定要删除吗?')) {
       this.service.delRow(event.data.id).subscribe((res)=> {
-        if (res.errorCode == 0) {
+        if (res.code == 0) {
           console.log("删除id为 %s 的数据", event.data.id);
         }
       });

@@ -15,7 +15,7 @@ export class Login {
   public userName: AbstractControl;
   public password: AbstractControl;
   public submitted: boolean = false;
-  public errorMsg: string;
+  public message: string;
 
   constructor(fb: FormBuilder, public userService: UserService,public router:Router) {
     this.form = fb.group({
@@ -32,8 +32,8 @@ export class Login {
     if (this.form.valid) {
       this.userService.login(values["userName"], values["password"]).subscribe(res=> {
         if (res) {
-          if (res.errorCode) {
-            this.errorMsg = res.errorMsg;
+          if (res.code) {
+            this.message = res.message;
             return;
           }
           localStorage.setItem("currentUser", values["userName"]);
