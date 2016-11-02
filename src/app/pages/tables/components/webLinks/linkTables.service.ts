@@ -1,12 +1,18 @@
 import {Injectable} from "@angular/core";
 import {Http, Headers, RequestOptions} from "@angular/http";
-import {addLinkApi, getLinkApi, updateLinkApi,delLinkApi} from "./../../../../../api.config";
+import {addLinkApi, getLinkApi, updateLinkApi, delLinkApi} from "./../../../../../api.config";
 import {Observable} from "rxjs";
 import {LinkModel} from "./link.model";
 @Injectable()
 export class LinkTablesService {
 
+  options: RequestOptions;
+
   constructor(public http: Http) {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    this.options = new RequestOptions({
+      headers: headers
+    });
   }
 
 
@@ -15,12 +21,8 @@ export class LinkTablesService {
    * @returns {Observable<R>}
    */
   addRow(linkModel: LinkModel): Observable<any> {
-    let headers = new Headers({'Content-Type': 'application/json'});
     let body = JSON.stringify(linkModel);
-    let options = new RequestOptions({
-      headers: headers
-    });
-    return this.http.post(addLinkApi, body, options)
+    return this.http.post(addLinkApi, body, this.options)
       .map(res => res.json());
   }
 
@@ -31,11 +33,7 @@ export class LinkTablesService {
    * @returns {Observable<R>}
    */
   delRow(id: number): Observable<any> {
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({
-      headers: headers
-    });
-    return this.http.get(delLinkApi + "/" + id, options)
+    return this.http.get(delLinkApi + "/" + id, this.options)
       .map(res => res.json());
   }
 
@@ -44,12 +42,8 @@ export class LinkTablesService {
    * @returns {Observable<R>}
    */
   updateRow(linkModel: LinkModel): Observable<any> {
-    let headers = new Headers({'Content-Type': 'application/json'});
     let body = JSON.stringify(linkModel);
-    let options = new RequestOptions({
-      headers: headers
-    });
-    return this.http.post(updateLinkApi, body, options)
+    return this.http.post(updateLinkApi, body, this.options)
       .map(res => res.json());
   }
 
@@ -63,7 +57,6 @@ export class LinkTablesService {
       return res.json();
     })
   }
-
 
 
   metricsTableData = [
