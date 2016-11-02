@@ -1,9 +1,70 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
-import {getLinkApi} from "./../../../../../api.config";
+import {Http, Headers, RequestOptions} from "@angular/http";
+import {addLinkApi, getLinkApi, updateLinkApi,delLinkApi} from "./../../../../../api.config";
 import {Observable} from "rxjs";
+import {LinkModel} from "./link.model";
 @Injectable()
 export class LinkTablesService {
+
+  constructor(public http: Http) {
+  }
+
+
+  /**
+   * 增加数据
+   * @returns {Observable<R>}
+   */
+  addRow(linkModel: LinkModel): Observable<any> {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let body = JSON.stringify(linkModel);
+    let options = new RequestOptions({
+      headers: headers
+    });
+    return this.http.post(addLinkApi, body, options)
+      .map(res => res.json());
+  }
+
+
+  /**
+   * 删除数据
+   * @param id
+   * @returns {Observable<R>}
+   */
+  delRow(id: number): Observable<any> {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({
+      headers: headers
+    });
+    return this.http.get(delLinkApi + "/" + id, options)
+      .map(res => res.json());
+  }
+
+  /**
+   * 修改数据
+   * @returns {Observable<R>}
+   */
+  updateRow(linkModel: LinkModel): Observable<any> {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let body = JSON.stringify(linkModel);
+    let options = new RequestOptions({
+      headers: headers
+    });
+    return this.http.post(updateLinkApi, body, options)
+      .map(res => res.json());
+  }
+
+
+  /**
+   * 查
+   * @returns {Observable<R>}
+   */
+  getData(): Observable<any> {
+    return this.http.get(getLinkApi).map(res=> {
+      return res.json();
+    })
+  }
+
+
 
   metricsTableData = [
     {
@@ -57,14 +118,4 @@ export class LinkTablesService {
       isPercentUp: false
     }
   ];
-
-
-  constructor(public http: Http) {
-  }
-
-  getData(): Observable<any> {
-    return this.http.get(getLinkApi).map(res=> {
-      return res.json();
-    })
-  }
 }

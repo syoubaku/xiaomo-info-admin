@@ -6,4 +6,12 @@ export const base="http://localhost:8080/";
  * @type {string}
  */
 export const getUserApi = base+"adminUser/login";
+
+/**
+ * 友情链接
+ * @type {string}
+ */
 export const getLinkApi = base+"link/findAll";
+export const addLinkApi = base+"link/add";
+export const updateLinkApi = base+"link/update";
+export const delLinkApi = base+"link/delete";

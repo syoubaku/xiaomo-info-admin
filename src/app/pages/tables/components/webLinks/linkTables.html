@@ -2,7 +2,10 @@
 
   <div class="row">
     <ba-card title="友情链接列表" baCardClass="with-scroll">
-      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table>
+      <ng2-smart-table [settings]="settings" [source]="source"
+                       (create)="onCreate($event)"
+                       (deleteConfirm)="onDeleteConfirm($event)"
+      ></ng2-smart-table>
     </ba-card>
   </div>
 
