@@ -3,7 +3,7 @@ import {Http, Headers, RequestOptions} from "@angular/http";
 import {loginApi} from "../../../api.config";
 
 @Injectable()
-export class UserService {
+export class LoginService {
 
   options: RequestOptions;
 

@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation} from "@angular/core";
 import {FormGroup, AbstractControl, FormBuilder, Validators} from "@angular/forms";
-import {UserService} from "../../other/services/user.service";
+import {LoginService} from "./login.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -17,7 +17,7 @@ export class Login {
   public submitted: boolean = false;
   public message: string;
 
-  constructor(fb: FormBuilder, public userService: UserService,public router:Router) {
+  constructor(fb: FormBuilder, public userService: LoginService, public router:Router) {
     this.form = fb.group({
       'userName': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]

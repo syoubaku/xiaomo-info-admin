@@ -5,7 +5,7 @@ import {NgaModule} from '../../theme/nga.module';
 
 import {Login} from './login.component';
 import {routing}       from './login.routing';
-import {UserService} from "../../other/services/user.service";
+import {LoginService} from "./login.service";
 
 
 @NgModule({
@@ -20,7 +20,7 @@ import {UserService} from "../../other/services/user.service";
     Login
   ],
   providers: [
-   UserService
+   LoginService
   ]
 })
 export default class LoginModule {
