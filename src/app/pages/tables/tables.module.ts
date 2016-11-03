@@ -9,6 +9,8 @@ import {Ng2SmartTableModule} from "ng2-smart-table";
 import {LinkTablesService} from "./components/webLinks/linkTables.service";
 import {AdminUserTables} from "./components/adminUsers/adminUserTables.component";
 import {AdminUserTablesService} from "./components/adminUsers/adminUserTables.service";
+import {MsgCenter} from "./components/msgCenter/msgCenter.component";
+import {MsgCenterService} from "./components/msgCenter/msgCenter.service";
 
 
 @NgModule({
@@ -23,10 +25,12 @@ import {AdminUserTablesService} from "./components/adminUsers/adminUserTables.se
     Tables,
     AdminUserTables,
     LinkTables,
+    MsgCenter
   ],
   providers: [
     AdminUserTablesService,
-    LinkTablesService
+    LinkTablesService,
+    MsgCenterService
   ]
 })
 export default class TablesModule {

@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Http, Headers, RequestOptions} from "@angular/http";
-import {getUserApi} from "../../../api.config";
+import {loginApi} from "../../../api.config";
 
 @Injectable()
 export class UserService {
@@ -14,7 +14,7 @@ export class UserService {
     let options = new RequestOptions({
       headers: headers
     });
-    return this.http.post(getUserApi, body, options)
+    return this.http.post(loginApi, body, options)
       .map(res => res.json());
   }
 

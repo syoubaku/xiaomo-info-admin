@@ -34,19 +34,19 @@ export const PAGES_MENU = [
               }
             }
           },
-          // {
-          //   path: 'users',
-          //   data: {
-          //     menu: {
-          //       title: '用户管理',
-          //     }
-          //   }
-          // },
           {
             path: 'webLinks',
             data: {
               menu: {
                 title: '友链管理',
+              }
+            }
+          },
+          {
+            path: 'msgCenter',
+            data: {
+              menu: {
+                title: '个人中心',
               }
             }
           },

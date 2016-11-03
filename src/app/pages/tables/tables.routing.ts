@@ -2,6 +2,7 @@ import {Routes, RouterModule} from "@angular/router";
 import {Tables} from "./tables.component";
 import {LinkTables} from "./components/webLinks/linkTables.component";
 import {AdminUserTables} from "./components/adminUsers/adminUserTables.component";
+import {MsgCenter} from "./components/msgCenter/msgCenter.component";
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
     component: Tables,
     children: [
       {path: 'adminUsers', component: AdminUserTables},
+      {path: 'msgCenter', component: MsgCenter},
       {path: 'webLinks', component: LinkTables}
     ]
   }

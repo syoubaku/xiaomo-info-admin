@@ -1,6 +1,6 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-
-import {GlobalState} from '../../../global.state';
+import {Component, ViewEncapsulation} from "@angular/core";
+import {GlobalState} from "../../../global.state";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'ba-page-top',
@@ -10,10 +10,12 @@ import {GlobalState} from '../../../global.state';
 })
 export class BaPageTop {
 
-  public isScrolled:boolean = false;
-  public isMenuCollapsed:boolean = false;
+  public isScrolled: boolean = false;
+  public isMenuCollapsed: boolean = false;
 
-  constructor(private _state:GlobalState) {
+  searchData: string;
+
+  constructor(private _state: GlobalState, public router: Router) {
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
     });
@@ -27,5 +29,36 @@ export class BaPageTop {
 
   public scrolledChanged(isScrolled) {
     this.isScrolled = isScrolled;
+  }
+
+
+  /**
+   * 登出
+   */
+  logout(): void {
+    if (localStorage.getItem("currentUser")) {
+      localStorage.removeItem('currentUser');
+    }
+  }
+
+  /**
+   * 搜索
+   */
+  startSearch(): void {
+    console.log(this.searchData);
+  }
+
+
+  /**
+   * 跳转到个人中心
+   */
+
+  jumpToInfoCenter(): void {
+    let currentUser = localStorage.getItem("currentUser");
+    if (!currentUser) {
+      alert("请登录！");
+      this.router.navigate(['/login']);
+    }
+    this.router.navigate(['/pages/msgCenter']);
   }
 }
