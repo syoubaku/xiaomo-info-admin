@@ -16,8 +16,8 @@ export class MsgCenter {
   public userName: AbstractControl;
   public password: AbstractControl;
   public submitted: boolean = false;
-  public user:string;
-  public pwd:string;
+  public user: string;
+  public pwd: string;
 
   constructor(fb: FormBuilder, protected service: MsgCenterService) {
     this.form = fb.group({
@@ -46,11 +46,11 @@ export class MsgCenter {
     this.submitted = true;
     if (this.form.valid) {
       this.service.saveUser(values).subscribe(res=> {
-        if (res) {
-          if (res.code) {
-            this.message = res.message;
-            return;
-          }
+        if (res.message) {
+          this.message = res.message;
+          return;
+        } else {
+          this.message = "保存成功！";
         }
       })
     }

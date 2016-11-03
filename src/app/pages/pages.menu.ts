@@ -42,14 +42,6 @@ export const PAGES_MENU = [
               }
             }
           },
-          {
-            path: 'msgCenter',
-            data: {
-              menu: {
-                title: '个人中心',
-              }
-            }
-          },
         ]
       },
       {
