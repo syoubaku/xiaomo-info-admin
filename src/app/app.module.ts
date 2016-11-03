@@ -12,7 +12,6 @@ import {GlobalState} from "./global.state";
 import {NgaModule} from "./theme/nga.module";
 import {PagesModule} from "./pages/pages.module";
 import {AuthGuard} from "./pages/directives/redirect.directive";
-import {UserService} from "./pages/services/user.service";
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -54,7 +53,6 @@ type StoreType = {
     ENV_PROVIDERS,
     APP_PROVIDERS,
     AuthGuard,
-    UserService
   ]
 })
 

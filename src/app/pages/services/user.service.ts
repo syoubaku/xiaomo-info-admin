@@ -5,16 +5,18 @@ import {loginApi} from "../../../api.config";
 @Injectable()
 export class UserService {
 
+  options: RequestOptions;
+
   constructor(public http: Http) {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    this.options = new RequestOptions({
+      headers: headers
+    });
   }
 
   login(userName, password) {
-    let headers = new Headers({'Content-Type': 'application/json'});
     let body = JSON.stringify({userName: userName, password: password});
-    let options = new RequestOptions({
-      headers: headers
-    });
-    return this.http.post(loginApi, body, options)
+    return this.http.post(loginApi, body, this.options)
       .map(res => res.json());
   }
 

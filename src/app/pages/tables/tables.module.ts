@@ -1,6 +1,6 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {FormsModule} from "@angular/forms";
+import {FormsModule,ReactiveFormsModule} from "@angular/forms";
 import {NgaModule} from "../../theme/nga.module";
 import {routing} from "./tables.routing";
 import {Tables} from "./tables.component";
@@ -18,6 +18,7 @@ import {MsgCenterService} from "./components/msgCenter/msgCenter.service";
     CommonModule,
     FormsModule,
     NgaModule,
+    ReactiveFormsModule,
     Ng2SmartTableModule,
     routing
   ],
