@@ -36,8 +36,10 @@ export class BaPageTop {
    * 登出
    */
   logout(): void {
-    if (localStorage.getItem("currentUser")) {
+    let currentUser = localStorage.getItem("currentUser");
+    if (currentUser) {
       localStorage.removeItem('currentUser');
+      this.router.navigate(['/login'])
     }
   }
 
