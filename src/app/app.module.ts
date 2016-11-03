@@ -11,7 +11,7 @@ import {AppState, InternalStateType} from "./app.service";
 import {GlobalState} from "./global.state";
 import {NgaModule} from "./theme/nga.module";
 import {PagesModule} from "./pages/pages.module";
-import {AuthGuard} from "./pages/directives/redirect.directive";
+import {AuthGuard} from "./other/directives/redirect.directive";
 
 /*
  * Platform and Environment providers/directives/pipes

@@ -48,7 +48,7 @@ export const PAGES_MENU = [
         path: 'editors',
         data: {
           menu: {
-            title: '编辑器',
+            title: '编辑器示例',
             icon: 'ion-edit',
             selected: false,
             expanded: false,
@@ -70,7 +70,7 @@ export const PAGES_MENU = [
         path: 'charts',
         data: {
           menu: {
-            title: '图表展示',
+            title: '各种图表展示',
             icon: 'ion-stats-bars',
             selected: false,
             expanded: false,
@@ -92,7 +92,7 @@ export const PAGES_MENU = [
         path: 'ui',
         data: {
           menu: {
-            title: 'UI特性',
+            title: '常用UI布局',
             icon: 'ion-android-laptop',
             selected: false,
             expanded: false,
@@ -146,7 +146,7 @@ export const PAGES_MENU = [
         path: 'forms',
         data: {
           menu: {
-            title: '表单元素',
+            title: '表单元素整理',
             icon: 'ion-compose',
             selected: false,
             expanded: false,
@@ -170,6 +170,28 @@ export const PAGES_MENU = [
               }
             }
           }
+        ]
+      },
+      {
+        path: 'timeMachine',
+        data: {
+          menu: {
+            title: '未来时光机项目',
+            icon: 'ion-compose',
+            selected: false,
+            expanded: false,
+            order: 400,
+          }
+        },
+        children: [
+          {
+            path: 'index',
+            data: {
+              menu: {
+                title: '首页管理',
+              }
+            }
+          },
         ]
       }
     ]
