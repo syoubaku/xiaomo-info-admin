@@ -59,6 +59,6 @@ export class BaPageTop {
       alert("请登录！");
       this.router.navigate(['/login']);
     }
-    this.router.navigate(['/pages/msgCenter']);
+    this.router.navigate(['/pages/tables/msgCenter']);
   }
 }
