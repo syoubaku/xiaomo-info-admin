@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Http, Headers, RequestOptions} from "@angular/http";
-import {getUserApi} from "./../../../../../api.config";
+import {getAdminUserApi} from "./../../../../../api.config";
 import {Observable} from "rxjs";
 import {AdminUserModel} from "../adminUsers/adminUser.model";
 
@@ -21,7 +21,7 @@ export class MsgCenterService {
    * @returns {Observable<R>}
    */
   findUser(userName: string): Observable<any> {
-    return this.http.get(getUserApi + "/" + userName)
+    return this.http.get(getAdminUserApi + "/" + userName)
       .map(res => res.json());
   }
 
@@ -32,7 +32,7 @@ export class MsgCenterService {
    * @returns {Observable<R>}
    */
   saveUser(adminModel: AdminUserModel): Observable<any> {
-    return this.http.post(getUserApi, JSON.stringify(adminModel), this.options)
+    return this.http.post(getAdminUserApi, JSON.stringify(adminModel), this.options)
       .map(res => res.json());
   }
 }

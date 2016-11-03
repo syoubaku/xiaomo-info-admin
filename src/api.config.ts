@@ -6,7 +6,12 @@ export const base = "http://localhost:8080/";
  * @type {string}
  */
 export const loginApi = base + "adminUser/login";
-export const getUserApi = base + "adminUser/findByName";
+export const getAdminUserApi = base + "adminUser/findByName";
+export const getAdminUserAllApi = base + "adminUser/findAll";
+export const addAdminUserApi = base + "adminUser/add";
+export const updateAdminUserApi = base + "adminUser/update";
+export const delAdminUserApi = base + "adminUser/delete";
+
 /**
  * 友情链接
  * @type {string}

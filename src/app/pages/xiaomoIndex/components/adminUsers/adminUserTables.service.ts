@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Http, Headers, RequestOptions} from "@angular/http";
-import {addLinkApi, getLinkApi, updateLinkApi, delLinkApi} from "./../../../../../api.config";
+import {getAdminUserAllApi, addAdminUserApi, updateAdminUserApi, delAdminUserApi} from "./../../../../../api.config";
 import {Observable} from "rxjs";
 import {AdminUserModel} from "./adminUser.model";
 @Injectable()
@@ -20,9 +20,9 @@ export class AdminUserTablesService {
    * 增加数据
    * @returns {Observable<R>}
    */
-  addRow(linkModel: AdminUserModel): Observable<any> {
-    let body = JSON.stringify(linkModel);
-    return this.http.post(addLinkApi, body, this.options)
+  addRow(adminUserModel: AdminUserModel): Observable<any> {
+    let body = JSON.stringify(adminUserModel);
+    return this.http.post(addAdminUserApi, body, this.options)
       .map(res => res.json());
   }
 
@@ -33,7 +33,7 @@ export class AdminUserTablesService {
    * @returns {Observable<R>}
    */
   delRow(id: number): Observable<any> {
-    return this.http.get(delLinkApi + "/" + id, this.options)
+    return this.http.get(delAdminUserApi + "/" + id, this.options)
       .map(res => res.json());
   }
 
@@ -41,9 +41,9 @@ export class AdminUserTablesService {
    * 修改数据
    * @returns {Observable<R>}
    */
-  updateRow(linkModel: AdminUserModel): Observable<any> {
-    let body = JSON.stringify(linkModel);
-    return this.http.post(updateLinkApi, body, this.options)
+  updateRow(adminUserModel: AdminUserModel): Observable<any> {
+    let body = JSON.stringify(adminUserModel);
+    return this.http.post(updateAdminUserApi, body, this.options)
       .map(res => res.json());
   }
 
@@ -53,7 +53,7 @@ export class AdminUserTablesService {
    * @returns {Observable<R>}
    */
   getData(): Observable<any> {
-    return this.http.get(getLinkApi).map(res=> {
+    return this.http.get(getAdminUserAllApi).map(res=> {
       return res.json();
     })
   }

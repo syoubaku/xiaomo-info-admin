@@ -1,5 +1,5 @@
 import {Component, ViewEncapsulation} from "@angular/core";
-import { AdminUserTablesService } from "./adminUserTables.service";
+import {AdminUserTablesService} from "./adminUserTables.service";
 import {LocalDataSource} from "ng2-smart-table";
 
 @Component({
@@ -30,16 +30,8 @@ export class AdminUserTables {
       confirmDelete: true
     },
     columns: {
-      name: {
+      userName: {
         title: '名字',
-        type: 'string'
-      },
-      url: {
-        title: 'url',
-        type: 'string'
-      },
-      order: {
-        title: '顺序',
         type: 'string'
       },
       createTime: {
@@ -58,7 +50,6 @@ export class AdminUserTables {
   constructor(protected service: AdminUserTablesService) {
     this.service.getData().subscribe(res => {
       this.source.load(res.data);
-      this.source.setSort([{field: 'order', direction: 'asc'}]);
     })
   }
 
