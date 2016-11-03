@@ -171,28 +171,6 @@ export const PAGES_MENU = [
             }
           }
         ]
-      },
-      {
-        path: 'maps',
-        data: {
-          menu: {
-            title: '地图',
-            icon: 'ion-ios-location-outline',
-            selected: false,
-            expanded: false,
-            order: 600,
-          }
-        },
-        children: [
-          {
-            path: 'googlemaps',
-            data: {
-              menu: {
-                title: '谷歌地图',
-              }
-            }
-          }
-        ]
       }
     ]
   }
