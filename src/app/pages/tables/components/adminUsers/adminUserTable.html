@@ -1,0 +1,13 @@
+<div class="widgets">
+
+  <div class="row">
+    <ba-card title="后台用户管理" baCardClass="with-scroll">
+      <ng2-smart-table [settings]="settings" [source]="source"
+                       (createConfirm)="onCreate($event)"
+                       (editConfirm)="onEdit($event)"
+                       (deleteConfirm)="onDeleteConfirm($event)"
+      ></ng2-smart-table>
+    </ba-card>
+  </div>
+
+</div>

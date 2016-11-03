@@ -18,7 +18,7 @@ export const PAGES_MENU = [
         path: 'tables',
         data: {
           menu: {
-            title: '小莫的主页',
+            title: '小莫的官方网站',
             icon: 'ion-grid',
             selected: false,
             expanded: false,
@@ -34,19 +34,19 @@ export const PAGES_MENU = [
               }
             }
           },
-          {
-            path: 'users',
-            data: {
-              menu: {
-                title: '用户管理',
-              }
-            }
-          },
+          // {
+          //   path: 'users',
+          //   data: {
+          //     menu: {
+          //       title: '用户管理',
+          //     }
+          //   }
+          // },
           {
             path: 'webLinks',
             data: {
               menu: {
-                title: '友情链接管理',
+                title: '友链管理',
               }
             }
           },
