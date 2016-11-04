@@ -42,6 +42,14 @@ export const PAGES_MENU = [
               }
             }
           },
+          {
+            path: 'works',
+            data: {
+              menu: {
+                title: '作品管理',
+              }
+            }
+          },
         ]
       },
       {

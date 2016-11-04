@@ -11,6 +11,7 @@ import {AdminUserTables} from "./components/adminUsers/adminUserTables.component
 import {AdminUserTablesService} from "./components/adminUsers/adminUserTables.service";
 import {MsgCenter} from "./components/msgCenter/msgCenter.component";
 import {MsgCenterService} from "./components/msgCenter/msgCenter.service";
+import {WorksTable} from "./components/works/worksTable.component";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {MsgCenterService} from "./components/msgCenter/msgCenter.service";
     Tables,
     AdminUserTables,
     LinkTables,
-    MsgCenter
+    MsgCenter,
+    WorksTable
   ],
   providers: [
     AdminUserTablesService,

@@ -45,7 +45,8 @@ $card-header-font-size: 16px;
 
   &.with-scroll {
     .card-body {
-      height: calc(100% - #{$card-title-height});
+  // fixme 这时原来是   height: calc(100% - #{$card-title-height});
+      height: 1000px;
       overflow-y: auto;
     }
   }
