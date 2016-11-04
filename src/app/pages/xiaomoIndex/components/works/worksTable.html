@@ -12,8 +12,8 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let item of smartTableData">
-        <td class="table-id">{{ item.id }}</td>
+      <tr *ngFor="let item of smartTableData;let i=index">
+        <td class="table-id">{{ i+1 }}</td>
         <td>{{ item.firstName }}</td>
         <td>{{ item.lastName }}</td>
         <td>{{ item.username }}</td>
