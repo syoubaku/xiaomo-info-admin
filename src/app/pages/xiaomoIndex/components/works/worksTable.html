@@ -10,19 +10,23 @@
         <th>完成时间</th>
         <th>创建时间</th>
         <th>修改时间</th>
-        <th>操作</th>
+        <th>
+          <button class="btn btn-success" (click)="showAddModal()">新增</button>
+        </th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let item of works;let i=index" (dblclick)="showChildModal(item.id)">
+      <tr *ngFor="let item of works;let i=index" (dblclick)="showUpdateModal(item.id)">
         <td class="table-id">{{ i+1 }}</td>
         <td><a href="{{item.url}}" target="_blank">{{ item.name }}</a></td>
-        <td><img src="{{item.imgUrl}}" alt=""></td>
+        <td><a href="{{item.imgUrl}}">点击查看</a></td>
         <td>{{ item.summary }}</td>
         <td>{{ item.completeTime }}</td>
         <td>{{ item.createTime }}</td>
         <td>{{ item.updateTime }}</td>
-        <td ><button (click)="delRow(item.id)" class="btn btn-danger">删除</button></td>
+        <td>
+          <button (click)="delRow(item.id)" class="btn btn-danger">删除</button>
+        </td>
       </tr>
       </tbody>
     </table>
@@ -30,15 +34,64 @@
 </ba-card>
 
 
-<!-- control modal from parent component -->
-<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div bsModal #addModel="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
         <button class="close" aria-label="Close" (click)="hideChildModal(false)">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title">Child modal</h4>
+        <h4 class="modal-title">添加作品</h4>
+      </div>
+      <div class="modal-body">
+        <!--　内容始める　-->
+          <div class="widgets">
+            <div class="row">
+              <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
+
+                <div class="form-group row"
+                     [ngClass]="{'has-error': (!userName.valid && userName.touched), 'has-success': (userName.valid && userName.touched)}">
+                  <label for="inputuserName3" class="col-sm-2 control-label">用户名</label>
+                  <div class="col-sm-10">
+                    <input [formControl]="userName" [(ngModel)]="user" type="text" class="form-control" id="inputuserName3" placeholder="用户名">
+                  </div>
+                </div>
+                <div class="form-group row"
+                     [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
+                  <label for="inputPassword3" class="col-sm-2 control-label">新密码</label>
+
+                  <div class="col-sm-10">
+                    <input [formControl]="password" type="password" [(ngModel)]="pwd" class="form-control" id="inputPassword3" placeholder="密码">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <div class="login-error">{{message}}</div>
+                    <button [disabled]="!form.valid" type="submit" class="btn btn-default btn-auth">保存</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+<!-- 内容ここまで -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary confirm-btn" (click)="hideChildModal(true)">保存修改</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #updateModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" aria-label="Close" (click)="hideChildModal(false)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">修改作品</h4>
       </div>
       <div class="modal-body">
         I am a child modal, opened from parent component!
@@ -49,3 +102,4 @@
     </div>
   </div>
 </div>
+
