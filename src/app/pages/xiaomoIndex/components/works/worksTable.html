@@ -3,24 +3,49 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th class="table-id">#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Age</th>
+        <th class="table-id">编号</th>
+        <th>名字</th>
+        <th>图片</th>
+        <th>简介</th>
+        <th>完成时间</th>
+        <th>创建时间</th>
+        <th>修改时间</th>
+        <th>操作</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let item of smartTableData;let i=index">
+      <tr *ngFor="let item of works;let i=index" (dblclick)="showChildModal(item.id)">
         <td class="table-id">{{ i+1 }}</td>
-        <td>{{ item.firstName }}</td>
-        <td>{{ item.lastName }}</td>
-        <td>{{ item.username }}</td>
-        <td><a class="email-link" href="mailto:{{ item.email }}">{{ item.email }}</a></td>
-        <td>{{ item.age }}</td>
+        <td><a href="{{item.url}}" target="_blank">{{ item.name }}</a></td>
+        <td><img src="{{item.imgUrl}}" alt=""></td>
+        <td>{{ item.summary }}</td>
+        <td>{{ item.completeTime }}</td>
+        <td>{{ item.createTime }}</td>
+        <td>{{ item.updateTime }}</td>
+        <td ><button (click)="delRow(item.id)" class="btn btn-danger">删除</button></td>
       </tr>
       </tbody>
     </table>
   </div>
 </ba-card>
+
+
+<!-- control modal from parent component -->
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" aria-label="Close" (click)="hideChildModal(false)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Child modal</h4>
+      </div>
+      <div class="modal-body">
+        I am a child modal, opened from parent component!
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary confirm-btn" (click)="hideChildModal(true)">保存修改</button>
+      </div>
+    </div>
+  </div>
+</div>

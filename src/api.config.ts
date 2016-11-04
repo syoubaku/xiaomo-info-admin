@@ -21,3 +21,13 @@ export const addLinkApi = base + "link/add";
 export const updateLinkApi = base + "link/update";
 export const delLinkApi = base + "link/delete";
 
+/**
+ * 作品链接
+ * @type {string}
+ */
+export const getWorksApi = base + "works/findAll";
+export const addWorksApi = base + "works/add";
+export const updateWorksApi = base + "works/update";
+export const delWorksApi = base + "works/delete";
+
+

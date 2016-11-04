@@ -1,10 +1,10 @@
 import {Injectable} from "@angular/core";
 import {Http, Headers, RequestOptions} from "@angular/http";
-import {addLinkApi, getLinkApi, updateLinkApi, delLinkApi} from "./../../../../../api.config";
+import {addWorksApi, getWorksApi, updateWorksApi, delWorksApi} from "./../../../../../api.config";
 import {Observable} from "rxjs";
-import {LinkModel} from "./link.model";
+import {WorkModel} from "./workModel";
 @Injectable()
-export class LinkTablesService {
+export class WorksTablesService {
 
   options: RequestOptions;
 
@@ -20,9 +20,9 @@ export class LinkTablesService {
    * 增加数据
    * @returns {Observable<R>}
    */
-  addRow(linkModel: LinkModel): Observable<any> {
-    let body = JSON.stringify(linkModel);
-    return this.http.post(addLinkApi, body, this.options)
+  addRow(workModel: WorkModel): Observable<any> {
+    let body = JSON.stringify(workModel);
+    return this.http.post(addWorksApi, body, this.options)
       .map(res => res.json());
   }
 
@@ -33,7 +33,7 @@ export class LinkTablesService {
    * @returns {Observable<R>}
    */
   delRow(id: number): Observable<any> {
-    return this.http.get(delLinkApi + "/" + id, this.options)
+    return this.http.get(delWorksApi + "/" + id, this.options)
       .map(res => res.json());
   }
 
@@ -41,9 +41,9 @@ export class LinkTablesService {
    * 修改数据
    * @returns {Observable<R>}
    */
-  updateRow(linkModel: LinkModel): Observable<any> {
-    let body = JSON.stringify(linkModel);
-    return this.http.post(updateLinkApi, body, this.options)
+  updateRow(workModel: WorkModel): Observable<any> {
+    let body = JSON.stringify(workModel);
+    return this.http.post(updateWorksApi, body, this.options)
       .map(res => res.json());
   }
 
@@ -53,7 +53,7 @@ export class LinkTablesService {
    * @returns {Observable<R>}
    */
   getData(): Observable<any> {
-    return this.http.get(getLinkApi).map(res=> {
+    return this.http.get(getWorksApi).map(res=> {
       return res.json();
     })
   }
