@@ -76,8 +76,17 @@ export class WorksTable {
    * 删除一行
    * @param id
    */
-  delRow(id): void {
-
+  delRow(id: number): void {
+    if (confirm("确定要删除吗")) {
+      this.service.delRow(id).subscribe(res => {
+        if (res.code == 0) {
+          console.log("删除作品中数据id为" + id + "的数据");
+          this.service.getData().subscribe(res => {
+            this.works = res.data;
+          })
+        }
+      })
+    }
   }
 
 }
